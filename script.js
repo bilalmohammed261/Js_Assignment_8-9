@@ -20,9 +20,10 @@ let mobileErrorMsg = $("mobile-error");
 let passwordErrorMsg = $("password-error");
 let reenterpasswordErrorMsg = $("reenter-password-error");
 let courseErrorMsg =$("course-error-msg");
-let flag = false;
+
 
 function checkGender() {
+    flag = true;
     let genderChecked = false;
     let i = 0;
     while (!genderChecked && i < genders.length) {
@@ -36,7 +37,7 @@ function checkGender() {
     if (!genderChecked) {
         genderErrorMsg.textContent = "Please select a gender";
     }
-    flag = true;
+    
     
 }
 
@@ -51,47 +52,58 @@ function clearErrorMessages(){
     courseErrorMsg.textContent ="";
 
 }
-submitBtn.onclick=function(){
+submitBtn.onclick=function(event){
     event.preventDefault();
     clearErrorMessages();
+    let flag = false;
     if(name.value===""){
+        flag = true;
         //name.nextSibling.nodeValue="Name can't be empty";
         nameErrorMsg.textContent = "Name can't be empty";
-        flag = true;
+        
     }
 
     if(dob.value===""){
-        dobErrorMsg.textContent = "DOB can't be empty";
         flag = true;
+        dobErrorMsg.textContent = "DOB can't be empty";
+        
     }
     
   checkGender();
 if(email.value===""){
-    emailErrorMsg.textContent ="Please enter an email address";
     flag = true;
+    emailErrorMsg.textContent ="Please enter an email address";
+    
 }
 
 if(mobile.value===""||mobile.value.length!==10)
     {
-        mobileErrorMsg.textContent = "Please enter a 10 digit mobile number";
         flag = true;
+        mobileErrorMsg.textContent = "Please enter a 10 digit mobile number";
+        
     }
 if(pwd.value === ""||pwd.value.length<8){
+    flag = true;
    passwordErrorMsg.textContent = "Password must be atleast 8 characters";
-   flag = true;
+   
 }
 
 if(pwd.value!==""&&pwd.value.length>=8&&pwd.value!==reenterpwd.value){
-    reenterpasswordErrorMsg.textContent = "Both the passwords must be same";
     flag = true;
+    reenterpasswordErrorMsg.textContent = "Both the passwords must be same";
+    
 }
 
 if(course.value===""){
-    courseErrorMsg.textContent="Please select a course";
     flag = true;
+    courseErrorMsg.textContent="Please select a course";
+    
 }
 
 if(!flag){
+    //console.log("Hi");
     alert("Student Registered");
 }
+
 }
+
