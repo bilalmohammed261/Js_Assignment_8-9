@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+</head>
+<body>
+    <form>
+        <h2>Register a new Student</h1>
+        <label for ="name">Name</label>
+        <input type ="text" id ="name">
+        <p id ="name-error"></p>
+        <label for ="dob">DOB</label>
+        <input type="date" id="dob">
+        <p id ="dob-error"></p>
+        <span>Gender</span>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label>
+        <p id="gender-error"></p>
+        <label for ="email">Email</label>
+        <input type="email" id ="email">
+        <p id="email-error"></p>
+        <label for ="mobile">Mobile</label>
+        <input type="tel" id ="mobile">
+        <p id="mobile-error"></p>    
+        <label for ="pwd">Password</label>
+        <input type="password" id ="pwd">
+        <p id="password-error"></p>
+        <label for ="reenterpwd">Re-enter Password</label>    
+        <input type="password" id ="reenterpwd">
+        <p id="reenter-password-error"></p>   
+        <label for="course">Course</label>
+        <select id="course" name="course">
+            <option value="">Select</option>
+            <option value="fsdt">FSDT</option>
+            <option value="aimt">AIMT</option>
+            <option value="cpmt">CPMT</option>
+        </select>
+        <p id="course-error-msg"></p>
+        <input type ="submit" id ="submit" value="Register">
+    </form>
+    <script src="script.js"></script>
+</body>
+</html>
