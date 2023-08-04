@@ -20,7 +20,7 @@ let mobileErrorMsg = $("mobile-error");
 let passwordErrorMsg = $("password-error");
 let reenterpasswordErrorMsg = $("reenter-password-error");
 let courseErrorMsg =$("course-error-msg");
-let flag = true;
+let flag = false;
 
 function checkGender() {
     let genderChecked = false;
@@ -36,7 +36,7 @@ function checkGender() {
     if (!genderChecked) {
         genderErrorMsg.textContent = "Please select a gender";
     }
-    flag = false;
+    flag = true;
     
 }
 
@@ -57,38 +57,38 @@ submitBtn.onclick=function(){
     if(name.value===""){
         //name.nextSibling.nodeValue="Name can't be empty";
         nameErrorMsg.textContent = "Name can't be empty";
-        flag = false;
+        flag = true;
     }
 
     if(dob.value===""){
         dobErrorMsg.textContent = "DOB can't be empty";
-        flag = false;
+        flag = true;
     }
     
   checkGender();
 if(email.value===""){
     emailErrorMsg.textContent ="Please enter an email address";
-    flag = false;
+    flag = true;
 }
 
 if(mobile.value===""||mobile.value.length!==10)
     {
         mobileErrorMsg.textContent = "Please enter a 10 digit mobile number";
-        flag = false;
+        flag = true;
     }
 if(pwd.value === ""||pwd.value.length<8){
    passwordErrorMsg.textContent = "Password must be atleast 8 characters";
-   flag = false;
+   flag = true;
 }
 
 if(pwd.value!==""&&pwd.value.length>=8&&pwd.value!==reenterpwd.value){
     reenterpasswordErrorMsg.textContent = "Both the passwords must be same";
-    flag = false;
+    flag = true;
 }
 
 if(course.value===""){
     courseErrorMsg.textContent="Please select a course";
-    flag = false;
+    flag = true;
 }
 
 if(!flag){
